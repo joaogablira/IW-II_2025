@@ -7,17 +7,22 @@
     <script>
         
         var nota = prompt("Digite sua nota: ");
+        var numero = parseFloat(nota);
         
-        if (nota >= 7 && nota <= 10) {
-            alert("Aprovado");
-        } else if (nota < 7 && nota >= 5) {
-            alert("Recuperação");
-        } else if (nota < 5) {
-            alert("Reprovado");
+        if (typeof numero !== 'number') {
+            alert("Por favor, digite apenas números.");
         } else {
-            alert("Nota inválida");
+            if (numero >= 7 && numero <= 10) {
+                alert("Aprovado");
+            } else if (numero < 7 && numero >= 5) {
+                alert("Recuperação");
+            } else if (numero < 5) {
+                alert("Reprovado");
+            } else {
+                alert("Nota inválida");
+            }
         }
-                
+                    
     </script>
 </head>
 <body>
