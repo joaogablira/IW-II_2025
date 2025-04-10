@@ -1,0 +1,66 @@
+<script>
+    function exibirMenu() {
+        return prompt(
+            "===== MENU INTERATIVO =====\n" +
+            "1 - Calcular Média\n" +
+            "2 - Sair\n" +
+            "Escolha uma opção:"
+        );
+    }
+
+    function calcularMedia() {
+        let nota1 = parseFloat(prompt("Digite a primeira nota (0 a 10):"));
+        let nota2 = parseFloat(prompt("Digite a segunda nota (0 a 10):"));
+
+        if (
+            isNaN(nota1) || isNaN(nota2) ||
+            nota1 < 0 || nota1 > 10 ||
+            nota2 < 0 || nota2 > 10
+        ) {
+            alert("Erro: As notas devem ser números entre 0 e 10.");
+            return;
+        }
+
+        let media = (nota1 + nota2) / 2;
+        let mensagem = "";
+
+        if (media >= 7) {
+            mensagem = "Aprovado";
+        } else if (media >= 5) {
+            mensagem = "Recuperação";
+        } else {
+            mensagem = "Reprovado";
+        }
+
+        alert(`A média é: ${media.toFixed(2)}\nSituação: ${mensagem}`);
+    }
+
+    function executarOpcao(opcao) {
+        switch (opcao) {
+            case "1":
+                calcularMedia();
+                break;
+            case "2":
+                alert("Saindo... Até mais!");
+                return false;
+            default:
+                alert("Opção inválida. Tente novamente.");
+        }
+        return true;
+    }
+
+    function iniciarMenu() {
+        let continuar = true;
+        while (continuar) {
+            let opcao = exibirMenu();
+            if (opcao === null) {
+                // Usuário apertou Cancelar
+                alert("Saindo... Até mais!");
+                break;
+            }
+            continuar = executarOpcao(opcao);
+        }
+    }
+
+    iniciarMenu();
+</script>
