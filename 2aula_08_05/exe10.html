@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mover Itens da Lista</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+        button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="lista">
+        <li>jesus  <button onclick="moverParaCima(this)">⬆</button> <button onclick="moverParaBaixo(this)">⬇</button></li>
+        <li>Deus <button onclick="moverParaCima(this)">⬆</button> <button onclick="moverParaBaixo(this)">⬇</button></li>
+        <li>felipe <button onclick="moverParaCima(this)">⬆</button> <button onclick="moverParaBaixo(this)">⬇</button></li>
+        <li>Dandan <button onclick="moverParaCima(this)">⬆</button> <button onclick="moverParaBaixo(this)">⬇</button></li>
+    </ul>
+
+    <script>
+        function moverParaCima(botao) {
+            const li = botao.parentElement;
+            const ul = li.parentElement;
+            const prevLi = li.previousElementSibling;
+            if (prevLi) {
+                ul.insertBefore(li, prevLi);
+            }
+        }
+
+        function moverParaBaixo(botao) {
+            const li = botao.parentElement;
+            const ul = li.parentElement;
+            const nextLi = li.nextElementSibling;
+            if (nextLi) {
+                ul.insertBefore(nextLi, li);
+            }
+        }
+    </script>
+</body>
+</html>

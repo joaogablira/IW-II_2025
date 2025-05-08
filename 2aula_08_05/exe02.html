@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Theme</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .light-theme {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .dark-theme {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        .theme-toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <button class="theme-toggle-btn" id="themeToggleBtn">🌞</button>
+
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const body = document.body;
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (body.classList.contains('light-theme')) {
+                body.classList.replace('light-theme', 'dark-theme');
+                themeToggleBtn.textContent = '🌙';
+            } else {
+                body.classList.replace('dark-theme', 'light-theme');
+                themeToggleBtn.textContent = '🌞';
+            }
+        });
+    </script>
+</body>
+</html></body>

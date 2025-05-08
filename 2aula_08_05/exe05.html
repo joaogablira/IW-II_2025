@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Paragraph Size</title>
+    <style>
+        #paragraph {
+            transition: font-size 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <p id="paragraph">Este é um parágrafo que pode ser aumentado ou diminuído ao clicar no botão.</p>
+    <button onclick="toggleSize()">Alterar Tamanho</button>
+
+    <script>
+        let isLarge = false;
+
+        function toggleSize() {
+            const paragraph = document.getElementById('paragraph');
+            if (isLarge) {
+                paragraph.style.fontSize = '16px';
+            } else {
+                paragraph.style.fontSize = '24px';
+            }
+            isLarge = !isLarge;
+        }
+    </script>
+</body>
+</html>

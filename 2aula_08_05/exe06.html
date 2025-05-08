@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Div Content</title>
+    <script>
+        function copyDivContent() {
+            const content = document.getElementById("contentDiv").innerText;
+            navigator.clipboard.writeText(content).then(() => {
+                alert("Content copied to clipboard!");
+            }).catch(err => {
+                console.error("Failed to copy content: ", err);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="contentDiv">
+        Felipe Gatao.
+    </div>
+    <button onclick="copyDivContent()">copiar</button>
+</body>
+</html>

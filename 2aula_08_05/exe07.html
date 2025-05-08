@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Validation</title>
+    <style>
+        input {
+            border: 2px solid black;
+            padding: 5px;
+        }
+        input.invalid {
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <label for="textInput">Digite algo:</label>
+    <input type="text" id="textInput" oninput="validateInput()">
+
+    <script>
+        function validateInput() {
+            const inputField = document.getElementById('textInput');
+            if (inputField.value.length < 5) {
+                inputField.classList.add('invalid');
+            } else {
+                inputField.classList.remove('invalid');
+            }
+        }
+    </script>
+</body>
+</html>
